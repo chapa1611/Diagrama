@@ -1,0 +1,52 @@
+@startuml
+
+class Pygame {
+    + init()
+    + image.load(path)
+    + transform.scale(image, size)
+    + display.set_mode(size)
+    + display.set_caption(title)
+    + event.get()
+    + key.get_pressed()
+    + time.Clock()
+    + quit()
+}
+
+class Sprite {
+    + __init__()
+    + image
+    + rect
+    + rect.center
+    + speed_x
+    + speed_y
+    + update()
+}
+
+class Sphere {
+    + __init__()
+    + update()
+}
+
+class AllSprites {
+    + __init__()
+    + add(sprite)
+    + update()
+    + draw(screen)
+}
+
+class Screen {
+    + blit(image, position)
+    + flip()
+}
+
+class Clock {
+    + tick(fps)
+}
+
+Pygame <-- Sprite
+Pygame <-- Sphere
+Pygame <-- AllSprites
+Pygame <-- Screen
+Pygame <-- Clock
+
+@enduml
